@@ -6,4 +6,4 @@ services:
     image: front
     ports:
       - '3000:3000'
-    command: 'npm run dec'
+    command: 'npm run start'
