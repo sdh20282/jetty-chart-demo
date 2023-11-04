@@ -5,5 +5,5 @@ services:
     build: .
     image: front
     ports:
-      - '80:80'
+      - '22:22'
     command: 'npm run start'
