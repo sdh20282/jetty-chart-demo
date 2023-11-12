@@ -5,16 +5,18 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>Jetty Chart</title>
-          <link rel="icon" href="/favicon.ico" />
+          <meta name="description" content="리액트 차트 라이브러리" />
+          <link rel="icon" href="images/chart.ico" />
         </Head>
         <body>
-          <Main />
-          <NextScript />
+          <div id="root">
+            <Main />
+            <NextScript />
+          </div>
         </body>
       </Html>
-    )
-  }
-}
+    );
+  };
+};
 
-export default MyDocument
+export default MyDocument;

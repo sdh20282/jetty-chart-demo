@@ -1,0 +1,75 @@
+.fieldset {
+  width: 100%;
+
+  padding: 25px 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.textWrapper {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  margin-right: 20px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.type {
+  margin-right: 12px;
+
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.option {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.inputWrapper {
+  width: 20%;
+
+  padding: 8px;
+
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  margin-right: 6px;
+
+  width: 100%;
+
+  background-color: inherit;
+
+  text-align: right;
+}
+
+.unit {
+  margin-bottom: 2px;
+
+  color: #333;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.description {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}

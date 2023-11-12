@@ -1,0 +1,17 @@
+.settingSection {
+  width: 40vw;
+  height: calc(100vh - 60px);
+}
+
+.settingList {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.settingList>li {
+  width: 100%;
+
+  border-bottom: 1px solid #ccc;
+}

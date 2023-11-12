@@ -1,0 +1,95 @@
+.fieldset {
+  width: 100%;
+
+  padding: 25px 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.textWrapper {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  margin-right: 20px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.type {
+  margin-right: 12px;
+
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.option {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.toggleWrapper {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.toggleContainer {
+  margin-right: 18px;
+
+  position: relative;
+
+  cursor: pointer;
+}
+
+.toggleBackground {
+  width: 36px;
+  height: 18px;
+
+  border-radius: 30px;
+  background-color: rgb(233, 132, 115);
+
+  transition: 0.4s
+}
+
+.toggleBackgroundChecked {
+  background-color: rgb(109, 198, 183);
+
+  transition: 0.4s
+}
+
+.toggleCircle {
+  width: 12px;
+  height: 12px;
+
+  position: absolute;
+  top: 3px;
+  left: 3px;
+
+  border-radius: 50%;
+  background-color: rgb(255, 254, 255);
+
+  transition: 0.4s
+}
+
+.toggleCircleChecked {
+  left: 20px;
+
+  transition: 0.4s
+}
+
+.description {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}

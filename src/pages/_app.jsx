@@ -1,7 +1,18 @@
+import Head from 'next/head'
+
 import "./globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+  const getLayout = Component.getLayout ?? ((page) => page);
 
-export default MyApp
+  return (
+    <>
+      <Head>
+        <title>Jetty Chart</title>
+      </Head>
+      {getLayout(<Component {...pageProps} />)}
+    </>
+  );
+};
+
+export default MyApp;
