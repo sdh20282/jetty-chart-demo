@@ -28,7 +28,17 @@ const ChartDetailPage = ({ name, data, type, value }) => {
 
     Object.keys(value).forEach((setting) => {
       if (setting === "animationSettings") {
-        return;
+        Object.keys(value[setting]).forEach((animation) => {
+          Object.keys(value[setting][animation]).forEach((detail) => {
+            if (chartData[setting][animation][detail] === value[setting][animation][detail]) {
+              return;
+            }
+
+            result[setting] ??= {};
+            result[setting][animation] ??= {};
+            result[setting][animation][detail] ??= chartData[setting][animation][detail];
+          });
+        });
       } else {
         Object.keys(value[setting]).forEach((detail) => {
           if (chartData[setting][detail] === value[setting][detail]) {

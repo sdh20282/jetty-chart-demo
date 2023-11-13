@@ -1,6 +1,8 @@
+import styles from './detail-section.module.css'
+
 const DetailSection = ({ props: { Chart, data, chartData, updateData } }) => {
   return (
-    <section key={JSON.stringify(chartData)}>
+    <section key={JSON.stringify(chartData)} className={styles.settingSection}>
       <header className="IROnly">
         <h3>Chart Detail Section</h3>
       </header>

@@ -6,35 +6,8 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-}
 
-.textWrapper {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-}
-
-.name {
-  margin-right: 20px;
-
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.type {
-  margin-right: 12px;
-
-  color: #777;
-  font-size: 12px;
-  font-weight: 400;
-}
-
-.option {
-  color: #777;
-  font-size: 12px;
-  font-weight: 400;
-  font-style: italic;
+  border-bottom: 1px solid #ccc;
 }
 
 .toggleWrapper {

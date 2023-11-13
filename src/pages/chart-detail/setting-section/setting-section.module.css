@@ -1,6 +1,28 @@
 .settingSection {
-  width: 40vw;
+  width: 100%;
   height: calc(100vh - 60px);
+
+  overflow-y: auto;
+}
+
+.settingSection::-webkit-scrollbar {
+  width: 8px;
+  background-color: #eee;
+}
+
+.settingSection::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.settingSection::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+
+.settingSection::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
 }
 
 .settingList {
@@ -8,10 +30,35 @@
 
   display: flex;
   flex-direction: column;
+
+  position: relative;
 }
 
 .settingList>li {
   width: 100%;
+}
 
-  border-bottom: 1px solid #ccc;
+.settingTitleListItem {
+  position: sticky;
+  top: 0px;
+
+  z-index: 1000;
+}
+
+.settingTitleWrapper {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #669efe;
+}
+
+.settingTitle {
+  margin-left: 50px;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
 }

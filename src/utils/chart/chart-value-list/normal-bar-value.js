@@ -5,7 +5,6 @@ export const normalBarValue = {
     height: 400,
     backgroundColor: "#fff",
     margin: { top: 60, bottom: 70, left: 80, right: 120 },
-    innerMargin: { top: 0, bottom: 0 },
     colorPalette: ["#669dfe", "#876697"],
     useVariousColors: false,
     padding: 20,
