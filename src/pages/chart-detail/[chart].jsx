@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 import HeaderLayout from '@/components/layout/header-layout/HeaderLayout';
@@ -14,8 +14,13 @@ import { getChartValue } from '@/utils/chart/chart-value';
 import { getRandomData } from '@/utils/data/random-data';
 
 const ChartDetailPage = ({ name, data, type, value }) => {
-  const [randomData, setRandomData] = useState(data);
-  const [chartData, setChartData] = useState(JSON.parse(JSON.stringify(value)));
+  const [randomData, setRandomData] = useState([]);
+  const [chartData, setChartData] = useState({});
+
+  useEffect(() => {
+    setRandomData(data);
+    setChartData(JSON.parse(JSON.stringify(value)));
+  }, []);
 
   const Chart = getChartComponent({ chartName: name });
 
@@ -60,8 +65,8 @@ const ChartDetailPage = ({ name, data, type, value }) => {
         <header className="IROnly">
           <h2>Jetty Chart Detail Page</h2>
         </header>
-        <SettingSection props={{ type, chartData, setChartData }} />
-        <DetailSection props={{ Chart, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />
+        {randomData.length !== 0 && chartData.normalSettings !== undefined && <SettingSection props={{ type, chartData, setChartData }} />}
+        {randomData.length !== 0 && chartData.normalSettings !== undefined && <DetailSection props={{ Chart, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
       </section>
     </main>
   )
