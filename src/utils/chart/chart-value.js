@@ -1,10 +1,14 @@
+import { multiLineValue } from "./chart-value-list/multi-line-value";
 import { normalBarValue } from "./chart-value-list/normal-bar-value";
+import { singleLineValue } from "./chart-value-list/single-line-value";
 import { StackedBarValue } from "./chart-value-list/stacked-bar-value";
 
 const chartValue = {
   "normal-bar": normalBarValue,
-  "stacked-bar": StackedBarValue
-}
+  "stacked-bar": StackedBarValue,
+  "single-line": singleLineValue,
+  "multi-line": multiLineValue,
+};
 
 export const getChartValue = ({ chartName }) => {
   const result = {};
@@ -29,4 +33,4 @@ export const getChartValue = ({ chartName }) => {
   });
 
   return result;
-}
+};
