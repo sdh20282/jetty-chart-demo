@@ -1,0 +1,102 @@
+.section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+}
+
+.selectList {
+  width: 100%;
+
+  background-color: #f7fafb;
+
+  position: sticky;
+
+  display: flex;
+}
+
+.selectButton {
+  padding: 12px 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: #aaa;
+
+  transition: all 0.2s;
+}
+
+.selectButton>span {
+  margin-bottom: 2px;
+
+}
+
+.selectButton>svg {
+  width: 20px;
+  height: 20px;
+}
+
+.selectButton:hover {
+  color: #669efe;
+}
+
+.selectList .selected {
+  background-color: white;
+
+  color: #669efe;
+}
+
+.selectedList {
+  width: 100%;
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedCandidate {
+  display: none;
+}
+
+.selectedList .selectedArea {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedArea>pre {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedArea>pre>div {
+  padding: 18px 25px;
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  background-color: #222;
+
+  font-size: 13px;
+}
+
+.annotation {
+  color: #999;
+}
+
+.emphasis {
+  color: #e25d47;
+}
+
+.hilight {
+  color: #f88d81;
+}
+
+.normal {
+  color: #ccc
+}

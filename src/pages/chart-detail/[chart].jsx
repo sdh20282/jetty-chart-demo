@@ -67,14 +67,14 @@ const ChartDetailPage = ({ name, data, type, value }) => {
             if (match) {
               return;
             }
-            
+
             result[setting] ??= {};
             result[setting][detail] ??= chartData[setting][detail];
           } else {
             if (chartData[setting][detail] === value[setting][detail]) {
               return;
             }
-  
+
             result[setting] ??= {};
             result[setting][detail] ??= chartData[setting][detail];
           }
@@ -92,7 +92,7 @@ const ChartDetailPage = ({ name, data, type, value }) => {
           <h2>Jetty Chart Detail Page</h2>
         </header>
         {randomData.length !== 0 && chartData.normalSettings !== undefined && <SettingSection props={{ type, chartData, setChartData }} />}
-        {randomData.length !== 0 && chartData.normalSettings !== undefined && <DetailSection props={{ Chart, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
+        {randomData.length !== 0 && chartData.normalSettings !== undefined && <DetailSection props={{ Chart, name, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
       </section>
     </main>
   )
