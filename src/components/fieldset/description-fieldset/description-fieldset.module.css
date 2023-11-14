@@ -10,12 +10,6 @@
   border-bottom: 1px solid #ccc;
 }
 
-.inputWrapper {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
 .description {
   color: #777;
   font-size: 12px;

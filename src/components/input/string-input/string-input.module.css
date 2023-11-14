@@ -1,5 +1,5 @@
 .inputWrapper {
-  width: 72px;
+  width: 120px;
 
   padding: 8px;
 
@@ -18,7 +18,7 @@
 
   background-color: inherit;
 
-  text-align: right;
+  text-align: left;
 }
 
 .unit {
