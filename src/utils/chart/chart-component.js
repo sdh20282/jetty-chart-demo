@@ -1,4 +1,4 @@
-import { NormalBar, StackedBar, Pie } from "jetty-chart";
+import { NormalBar, StackedBar } from "jetty-chart";
 
 const chartComponent = {
   "normal-bar": NormalBar,

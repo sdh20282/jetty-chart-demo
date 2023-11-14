@@ -1,4 +1,9 @@
 export const normalBarValue = {
+  base: {
+    keys: [],
+    xLegend: "",
+    yLegend: "",
+  },
   // 기본 세팅
   normalSettings: {
     width: 500,

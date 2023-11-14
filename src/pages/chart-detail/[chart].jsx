@@ -19,7 +19,14 @@ const ChartDetailPage = ({ name, data, type, value }) => {
 
   useEffect(() => {
     setRandomData(data);
-    setChartData(JSON.parse(JSON.stringify(value)));
+    setChartData({
+      ...JSON.parse(JSON.stringify(value)),
+      base: {
+        keys: [],
+        xLegend: "x-legend",
+        yLegend: "y-legend",
+      }
+    });
   }, []);
 
   const Chart = getChartComponent({ chartName: name });
@@ -46,12 +53,31 @@ const ChartDetailPage = ({ name, data, type, value }) => {
         });
       } else {
         Object.keys(value[setting]).forEach((detail) => {
-          if (chartData[setting][detail] === value[setting][detail]) {
-            return;
-          }
+          if (typeof chartData[setting][detail] === 'object') {
+            let match = true;
 
-          result[setting] ??= {};
-          result[setting][detail] ??= chartData[setting][detail];
+            Object.keys(chartData[setting][detail]).forEach((key) => {
+              if (chartData[setting][detail][key] !== value[setting][detail][key]) {
+                match = false;
+
+                return;
+              }
+            });
+
+            if (match) {
+              return;
+            }
+            
+            result[setting] ??= {};
+            result[setting][detail] ??= chartData[setting][detail];
+          } else {
+            if (chartData[setting][detail] === value[setting][detail]) {
+              return;
+            }
+  
+            result[setting] ??= {};
+            result[setting][detail] ??= chartData[setting][detail];
+          }
         });
       }
     });
