@@ -1,0 +1,17 @@
+.fieldset {
+  width: 100%;
+
+  padding: 25px 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.description {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}

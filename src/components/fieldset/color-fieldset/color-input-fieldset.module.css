@@ -1,0 +1,53 @@
+.fieldset {
+  width: 100%;
+
+  padding: 25px 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.colorPickerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.colorInput {
+  margin-right: 18px;
+  padding: 2px 5px;
+
+  width: 50px;
+  height: 30px;
+
+  background-color: #efefef;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+
+  appearance: none;
+  background-color: transparent;
+  border: none; */
+}
+
+/* .colorInput::-webkit-color-swatch {
+  border-radius: 30px;
+} */
+
+.color {
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.description {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}

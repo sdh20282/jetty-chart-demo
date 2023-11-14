@@ -1,0 +1,30 @@
+.inputWrapper {
+  width: 72px;
+
+  padding: 8px;
+
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  margin-right: 6px;
+
+  width: 100%;
+
+  background-color: inherit;
+
+  text-align: right;
+}
+
+.unit {
+  margin-bottom: 2px;
+
+  color: #333;
+  font-size: 12px;
+  font-weight: 400;
+}

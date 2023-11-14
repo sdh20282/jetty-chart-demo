@@ -1,0 +1,38 @@
+.fieldset {
+  width: 100%;
+
+  padding: 25px 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.objectList {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.objectList>li {
+  display: flex;
+  align-items: center;
+}
+
+.objectPropertyDescription {
+  margin-right: 8px;
+
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.description {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}
