@@ -18,6 +18,33 @@ export const multiLineValue = {
     minScope: -100,
     showTopScope: false,
   },
+  // 라인 세팅
+  lineSettings: {
+    lineOpacity: 1,
+    lineWidth: 2,
+    enablePoint: true,
+    pointColor: "#000",
+    pointColorFollowLineColor: true,
+    pointSize: 2,
+    pointBorderColor: "#fff",
+    pointBorderColorFollowLineColor: true,
+    pointBorderWidth: 2,
+    enablePointLabel: false,
+    showLabelOnHover: false,
+    pointLabelColor: "#000",
+    pointLabelSize: 12,
+    pointLabelOffsetX: 0,
+    pointLabelOffsetY: -10,
+    pointLabelWeight: 500,
+    enableArea: false,
+    areaColor: "#fff",
+    areaOpacity: 0.5,
+    enableCurve: false,
+    smoothDegree: 0.15,
+    angleDegree: 1,
+    strokeLinejoin: "miter", // "miter" | "round" | "bevel"
+    strokeLinecap: "butt", // "butt" | "round" | "square"
+  },
   // y축 라인 세팅
   axisYGridLineSettings: {
     lineVisible: true,
@@ -175,33 +202,6 @@ export const multiLineValue = {
     legendOpacity: 1,
     legendColor: "#aaa",
     legendOnStart: true,
-  },
-  // 라인 세팅
-  lineSettings: {
-    lineOpacity: 1,
-    lineWidth: 2,
-    enablePoint: true,
-    pointColor: "#000",
-    pointColorFollowLineColor: true,
-    pointSize: 2,
-    pointBorderColor: "#fff",
-    pointBorderColorFollowLineColor: true,
-    pointBorderWidth: 2,
-    enablePointLabel: false,
-    showLabelOnHover: false,
-    pointLabelColor: "#000",
-    pointLabelSize: 12,
-    pointLabelOffsetX: 0,
-    pointLabelOffsetY: -10,
-    pointLabelWeight: 500,
-    enableArea: false,
-    areaColor: "#fff",
-    areaOpacity: 0.5,
-    enableCurve: false,
-    smoothDegree: 0.15,
-    angleDegree: 1,
-    strokeLinejoin: "miter", // "miter" | "round" | "bevel"
-    strokeLinecap: "butt", // "butt" | "round" | "square"
   },
   animationSettings: {
     axisYGridLineSettings: {

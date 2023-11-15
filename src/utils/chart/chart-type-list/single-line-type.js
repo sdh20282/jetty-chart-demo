@@ -1276,14 +1276,14 @@ export const singleLineType = {
       description: "영역 활성화 여부를 나타냅니다.",
       type: "boolean",
     },
-    {
-      name: "areaColor,optional",
-      attribute: "hex-code,nullable",
-      description: "영역 색상을 나타냅니다.",
-      type: "color",
-      dependency: "lineSettings-enableArea",
-      show: true,
-    },
+    // {
+    //   name: "areaColor",
+    //   attribute: "hex-code,optional",
+    //   description: "영역 색상을 나타냅니다.",
+    //   type: "color",
+    //   dependency: "lineSettings-enableArea",
+    //   show: true,
+    // },
     {
       name: "areaOpacity",
       attribute: "number,optional",

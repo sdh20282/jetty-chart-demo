@@ -3,4 +3,6 @@ export const chartList = [
   "stacked-bar",
   "single-line",
   "multi-line",
+  "stacked-line",
+  "bump",
 ]

@@ -12,7 +12,7 @@ export const getRandomData = ({ chartName }) => {
     }
 
     return arr;
-  } else if (chartName === "multi-line") {
+  } else if (chartName === "multi-line" || chartName === "stacked-line") {
     const arr = [];
     const count = counts[Math.floor(Math.random() * counts.length)];
     for (let i = 0; i < [2, 3, 4][Math.floor(Math.random() * 3)]; i++) {
@@ -29,5 +29,37 @@ export const getRandomData = ({ chartName }) => {
       arr.push(data);
     }
     return arr;
+  } else if (chartName === "bump") {
+    const rankData = [];
+    const ranks = [];
+    const rankCount = 4;
+    const rankers = 8;
+    for (let i = 0; i < rankers; i++) {
+      const numbers = Array(rankCount)
+        .fill()
+        .map((item, index) => index + 1);
+
+      const rank = [];
+
+      while (numbers.length > 0) {
+        const num = Math.floor(Math.random() * numbers.length);
+        const newArr = numbers.splice(num, 1);
+        rank.push(newArr[0]);
+      }
+      ranks.push(rank);
+    }
+    for (let i = 0; i < rankCount; i++) {
+      const d = {};
+      d.id = `Serie ${i + 1}`;
+      d.data = [];
+      for (let index = 0; index < rankers; index++) {
+        d.data.push({
+          value: ranks[index][i],
+          label: 2000 + index,
+        });
+      }
+      rankData.push(d);
+    }
+    return rankData;
   }
 };

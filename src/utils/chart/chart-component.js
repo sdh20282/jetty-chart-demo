@@ -1,10 +1,12 @@
-import { NormalBar, StackedBar, Pie, SingleLine, MultiLine } from "jetty-chart";
+import { NormalBar, StackedBar, Pie, SingleLine, MultiLine, StackedLine, BumpChart } from "jetty-chart";
 
 const chartComponent = {
   "normal-bar": NormalBar,
   "stacked-bar": StackedBar,
   "single-line": SingleLine,
   "multi-line": MultiLine,
+  "stacked-line": StackedLine,
+  "bump": BumpChart,
 }
 
 export const getChartComponent = ({ chartName }) => {
