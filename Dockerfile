@@ -1,5 +1,5 @@
 # 기본 이미지 설정
-FROM node:18.16.0-alpine
+FROM node:20.9.0-alpine
 
 # 작업 디렉토리 설정
 WORKDIR /app
