@@ -2,7 +2,7 @@ import { NormalBar, StackedBar } from "jetty-chart";
 
 const chartComponent = {
   "normal-bar": NormalBar,
-  "stacked-bar": StackedBar,
+  // "stacked-bar": StackedBar,
 }
 
 export const getChartComponent = ({ chartName }) => {

@@ -1,9 +1,9 @@
 import { normalBarValue } from "./chart-value-list/normal-bar-value";
-import { StackedBarValue } from "./chart-value-list/stacked-bar-value";
+// import { StackedBarValue } from "./chart-value-list/stacked-bar-value";
 
 const chartValue = {
   "normal-bar": normalBarValue,
-  "stacked-bar": StackedBarValue
+  // "stacked-bar": StackedBarValue
 }
 
 export const getChartValue = ({ chartName }) => {
