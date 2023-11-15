@@ -12,6 +12,21 @@ export const getRandomData = ({ chartName }) => {
     }
 
     return arr;
+  } else if (chartName === "stacked-bar") {
+    const arr = [];
+    const count = counts[Math.floor(Math.random() * counts.length)];
+    for (let index = 0; index < counts[Math.floor(Math.random() * counts.length)]; index++) {
+      const numbers = []
+      for (let i = 0; i < count; i++) {
+        numbers.push(Math.floor(Math.random() * 90) + 10);
+      }
+      arr.push({
+        value: numbers,
+        label: "x" + (index + 1),
+      });
+    }
+
+    return arr;
   } else if (chartName === "multi-line" || chartName === "stacked-line") {
     const arr = [];
     const count = counts[Math.floor(Math.random() * counts.length)];

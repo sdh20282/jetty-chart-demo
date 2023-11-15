@@ -1,4 +1,11 @@
+import { colorPalette } from "@/utils/color/colorPalette";
+
 export const StackedBarValue = {
+  base: {
+    keys: [],
+    xLegend: "",
+    yLegend: "",
+  },
   // 기본 세팅
   normalSettings: {
     width: 500,
@@ -6,7 +13,7 @@ export const StackedBarValue = {
     backgroundColor: "#fff",
     margin: { top: 60, bottom: 70, left: 80, right: 120 },
     innerMargin: { top: 0, bottom: 0 },
-    colorPalette: ["#669dfe", "#876697", "#520592", "#24c391", "#d2c919", "#d12305"],
+    colorPalette: colorPalette["deep sea"],
     useVariousColors: false,
     padding: 20,
     reverse: false,
