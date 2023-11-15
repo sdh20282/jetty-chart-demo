@@ -5,6 +5,8 @@ import styles from './number-input-fieldset.module.css';
 
 import { checkDependency } from '@/utils/common/dependency';
 
+const regExp = /^[0-9]\./g
+
 const NumberInputFieldset = ({ props: { data, chartData, setChartData, target } }) => {
   const targetParse = target.split("-");
   const display = checkDependency({ data, chartData });
@@ -17,12 +19,8 @@ const NumberInputFieldset = ({ props: { data, chartData, setChartData, target } 
     const newData = JSON.parse(JSON.stringify(chartData));
     let value = e.target.value;
 
-    if (isNaN(e.target.value)) {
-      return;
-    }
-
-    value = Number(value);
-
+    value = value.replaceAll(/[^0-9^/.]/g, "");
+    
     if (targetParse.length === 2) {
       newData[targetParse[0]][targetParse[1]] = value;
     } else {

@@ -10,6 +10,41 @@
   border-bottom: 1px solid #ccc;
 }
 
+.editWrapper {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.editButton {
+  width: 22px;
+  height: 22px;
+
+  background-color: #669efe;
+  border-radius: 5px;
+
+  font-size: 12px;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editModal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rebeccapurple;
+}
+
+.editButton>svg {
+  width: 18px;
+  height: 18px;
+}
+
 .description {
   color: #777;
   font-size: 12px;

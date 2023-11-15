@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { getChartComponentString } from '@/utils/chart/chart-component';
 
 import CodeIcon from '@mui/icons-material/Code';
 import DataArrayIcon from '@mui/icons-material/DataArray';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 import styles from './info-section.module.css'
 
@@ -124,6 +125,9 @@ const convertStringToTag = ({ string }) => {
           if (char === "{" || char === "[" || char === "}" || char === "]") {
             nowResult += `<span class=${styles.emphasis}>`;
             openEmphasis = true;
+          } else if (char === "'" || char === '"') {
+            nowResult += `<span class=${styles.hilight}>`;
+            openHilight = true;
           } else {
             nowResult += `<span class=${styles.normal}>`;
             openNormal = true;
@@ -137,38 +141,53 @@ const convertStringToTag = ({ string }) => {
             nowResult += char;
           } else if (openNormal || openAnnotation) {
             nowResult += `</span><span class=${styles.emphasis}>` + char;
+            openNormal = false;
+            openAnnotation = false;
+            openEmphasis = true;
           } else {
             nowResult += `<span class=${styles.emphasis}>` + char;
+            openEmphasis = true;
           }
         } else if (char === '"' || char === "'") {
           if (openHilight) {
             nowResult += char + `</span>`;
             openHilight = false;
           } else {
-            nowResult += `<span class=${styles.hilight}>` + char;
+            nowResult += `</span><span class=${styles.hilight}>` + char;
             openHilight = true;
           }
+          openNormal = false;
+          openAnnotation = false;
+          openEmphasis = false;
         } else if (char === ":" || char === "=") {
           if (openHilight || openAnnotation) {
             nowResult += char;
           } else if (openNormal || openEmphasis) {
             nowResult += `</span><span class=${styles.annotation}>` + char;
+            openNormal = false;
+            openAnnotation = true;
+            openEmphasis = false;
           } else {
             nowResult += `<span class=${styles.annotation}>` + char;
+            openAnnotation = true;
           }
         } else {
           if (openHilight || openNormal) {
             nowResult += char;
           } else if (openAnnotation || openEmphasis) {
             nowResult += `</span><span class=${styles.normal}>` + char;
+            openNormal = true;
+            openAnnotation = false;
+            openEmphasis = false;
           } else {
             nowResult += `<span class=${styles.normal}>` + char;
+            openNormal = true;
           }
         }
       }
-    })
+    });
 
-    nowResult += `</div>\n`;
+    nowResult += `</span></div>\n`;
     result += nowResult;
   });
 
@@ -199,15 +218,31 @@ const transform = (str) => {
 
 const InfoSection = ({ props: { name, data, base, chartData } }) => {
   const [selected, setSelected] = useState(selectList[0]);
+  const copyTarget = useRef(null);
+  const copyText = useRef(null);
 
-  const changed = `${JSON.stringify({ ...base, ...chartData }).slice(1, -1)}`;
-  const result = getCode({ name: getChartComponentString({ chartName: name }), props: convertStringToTag({ string: parseJSON({ string: changed, toProps: true, initTabSize: 8 }) }) });
+  const resultCode = getCode({ name: getChartComponentString({ chartName: name }), props: convertStringToTag({ string: parseJSON({ string: `${JSON.stringify({ ...base, ...chartData }).slice(1, -1)}`, toProps: true, initTabSize: 8 }) }) });
+  const resultData = convertStringToTag({ string: parseJSON({ string: `[${data.map(d => JSON.stringify(d))}]`, toProps: false, initTabSize: 0 }) });
 
   const handleSelectClick = ({ target }) => {
     setSelected(target);
   }
 
-  const test = `<p>test</p>`;
+  const handleClickCopy = async ({ target }) => {
+    try {
+      copyTarget.current.innerHTML = target === selectList[0] ? resultCode : resultData;
+
+      await navigator.clipboard.writeText(copyTarget.current.textContent);
+
+      copyText.current.classList.remove(`${styles.show}`);
+      
+      setTimeout(() => {
+        copyText.current.classList.add(`${styles.show}`);
+      }, 100);
+    } catch (e) {
+      alert('복사에 실패하였습니다');
+    }
+  }
 
   return (
     <section className={styles.section}>
@@ -231,13 +266,23 @@ const InfoSection = ({ props: { name, data, base, chartData } }) => {
       <ul className={styles.selectedList}>
         <li className={`${styles.selectedCandidate} ${selected === selectList[0] ? styles.selectedArea : null}`}>
           <pre>
-            <div dangerouslySetInnerHTML={{ __html: transform(result) }}></div>
+            <div dangerouslySetInnerHTML={{ __html: transform(resultCode) }}></div>
           </pre>
         </li>
         <li className={`${styles.selectedCandidate} ${selected === selectList[1] ? styles.selectedArea : null}`}>
-          <div></div>
+          <pre>
+            <div dangerouslySetInnerHTML={{ __html: transform(resultData) }}></div>
+          </pre>
         </li>
       </ul>
+      <div className={styles.copyWrapper}>
+        <button className={styles.copyButton} onClick={() => {handleClickCopy({ target: selected === selectList[0] ? selectList[0] : selectList[1] })}}>
+          <ContentCopyIcon />
+          <span className="IROnly">복사</span>
+        </button>
+        <div className={styles.alert} ref={copyText}>Copied!</div>
+      </div>
+      <div className="IROnly" ref={copyTarget}></div>
     </section>
   )
 }

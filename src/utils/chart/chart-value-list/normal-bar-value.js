@@ -1,3 +1,5 @@
+import { colorPalette } from "@/utils/color/colorPalette"
+
 export const normalBarValue = {
   base: {
     keys: [],
@@ -10,7 +12,7 @@ export const normalBarValue = {
     height: 400,
     backgroundColor: "#fff",
     margin: { top: 60, bottom: 70, left: 80, right: 120 },
-    colorPalette: ["#669dfe", "#876697"],
+    colorPalette: colorPalette.jetty,
     useVariousColors: false,
     padding: 20,
     reverse: false,

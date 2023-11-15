@@ -111,7 +111,6 @@ export const getStaticPaths = async () => {
   }));
 
   return { paths, fallback: false }
-
 }
 
 // 추후 chart data를 db에 저장 할 경우 해당 부분에서 가져옴

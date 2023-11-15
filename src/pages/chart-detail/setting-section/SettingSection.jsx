@@ -14,13 +14,6 @@ const SettingSection = ({ props: { type, chartData, setChartData } }) => {
             Object.keys(type).map((key) => {
               if (key === "animationSettings") {
                 return [
-                  // <li key={key} className={styles.settingTitleListItem}>
-                  //   <div className={styles.settingTitleWrapper}>
-                  //     <p className={styles.settingTitle}>
-                  //       {key}
-                  //     </p>
-                  //   </div>
-                  // </li>,
                   ...Object.keys(type[key]).map((key2) => {
                     return [
                       <li key={key2} className={styles.settingTitleListItem}>
