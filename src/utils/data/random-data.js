@@ -7,7 +7,7 @@ export const getRandomData = ({ chartName }) => {
     for (let index = 0; index < counts[Math.floor(Math.random() * counts.length)]; index++) {
       arr.push({
         value: Math.floor(Math.random() * 90) + 10,
-        label: "data-" + (index + 1),
+        label: "x" + (index + 1),
       });
     }
 

@@ -19,7 +19,14 @@ const ChartDetailPage = ({ name, data, type, value }) => {
 
   useEffect(() => {
     setRandomData(data);
-    setChartData(JSON.parse(JSON.stringify(value)));
+    setChartData({
+      ...JSON.parse(JSON.stringify(value)),
+      base: {
+        keys: [],
+        xLegend: "x-legend",
+        yLegend: "y-legend",
+      }
+    });
   }, []);
 
   const Chart = getChartComponent({ chartName: name });
@@ -46,12 +53,29 @@ const ChartDetailPage = ({ name, data, type, value }) => {
         });
       } else {
         Object.keys(value[setting]).forEach((detail) => {
-          if (chartData[setting][detail] === value[setting][detail]) {
-            return;
-          }
+          if (typeof chartData[setting][detail] === 'object') {
+            let match = true;
 
-          result[setting] ??= {};
-          result[setting][detail] ??= chartData[setting][detail];
+            Object.keys(chartData[setting][detail]).forEach((key) => {
+              if (chartData[setting][detail][key] !== value[setting][detail][key]) {
+                match = false;
+
+                return;
+              }
+            });
+
+            if (match) {
+              return;
+            }
+            result[setting] ??= {};
+            result[setting][detail] ??= chartData[setting][detail];
+          } else {
+            if (chartData[setting][detail] === value[setting][detail]) {
+              return;
+            }
+            result[setting] ??= {};
+            result[setting][detail] ??= chartData[setting][detail];
+          }
         });
       }
     });
@@ -66,7 +90,7 @@ const ChartDetailPage = ({ name, data, type, value }) => {
           <h2>Jetty Chart Detail Page</h2>
         </header>
         {randomData.length !== 0 && chartData.normalSettings !== undefined && <SettingSection props={{ type, chartData, setChartData }} />}
-        {randomData.length !== 0 && chartData.normalSettings !== undefined && <DetailSection props={{ Chart, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
+        {randomData.length !== 0 && chartData.normalSettings !== undefined && <DetailSection props={{ Chart, name, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
       </section>
     </main>
   )
@@ -85,7 +109,6 @@ export const getStaticPaths = async () => {
   }));
 
   return { paths, fallback: false }
-
 }
 
 // 추후 chart data를 db에 저장 할 경우 해당 부분에서 가져옴

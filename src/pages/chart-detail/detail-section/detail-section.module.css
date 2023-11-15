@@ -1,4 +1,61 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .settingSection {
   width: 100%;
   height: calc(100vh - 60px);
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.refreshButton {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #669efe;
+
+  top: 20px;
+  right: 20px;
+}
+
+.refreshButton>svg {
+  width: 34px;
+  height: 34px;
+
+  padding: 5px;
+
+  color: #669efe;
+}
+
+.refreshButton>svg:hover {
+  animation: rotate 1s ease;
+}
+
+.chartWrapper {
+  width: 100%;
+
+  /* padding: 6px 0 12px; */
+
+  background-color: #f7fafb;
+
+  display: flex;
+  justify-content: center;
 }

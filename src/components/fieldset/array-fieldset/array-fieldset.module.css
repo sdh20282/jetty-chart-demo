@@ -1,0 +1,68 @@
+.fieldset {
+  width: 100%;
+
+  padding: 25px 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.addButton {
+  padding: 4px 6px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.addButton:hover {
+  background-color: #aaa;
+
+  color: #fff;
+
+  transition: all 0.3s;
+}
+
+.hashList {
+  display: flex;
+  gap: 4px;
+}
+
+.hash {
+  padding: 4px 8px;
+
+  background-color: #669efe;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: #fff;
+  font-size: 12px;
+}
+
+.hash > button > svg {
+  width: 12px;
+  height: 12px;
+
+  margin-top: 4px;
+}
+
+.description {
+  color: #777;
+  font-size: 12px;
+  font-weight: 400;
+}

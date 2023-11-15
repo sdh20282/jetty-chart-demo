@@ -14,37 +14,30 @@ const SettingSection = ({ props: { type, chartData, setChartData } }) => {
             Object.keys(type).map((key) => {
               if (key === "animationSettings") {
                 return [
-                  <li key={key} className={styles.settingTitleListItem}>
-                    <div className={styles.settingTitleWrapper}>
-                      <p className={styles.settingTitle}>
-                        {key}
-                      </p>
-                    </div>
-                  </li>,
                   ...Object.keys(type[key]).map((key2) => {
-                  return [
-                    <li key={key2} className={styles.settingTitleListItem}>
-                      <div className={styles.settingTitleWrapper}>
-                        <p className={styles.settingTitle}>
-                          {key} - {key2}
-                        </p>
-                      </div>
-                    </li>,
-                    ...type[key][key2].map(t => {
-                      const Component = typeData[t.type];
-  
-                      if (!Component) {
-                        return;
-                      }
-    
-                      return (
-                        <li key={`${key}-${key2}-${t.name}`}>
-                          <Component props={{ data: t, chartData, setChartData, target: `${key}-${key2}-${t.name}` }} />
-                        </li>
-                      );
-                    })
-                  ]
-                })]
+                    return [
+                      <li key={key2} className={styles.settingTitleListItem}>
+                        <div className={styles.settingTitleWrapper}>
+                          <p className={styles.settingTitle}>
+                            {key} - {key2}
+                          </p>
+                        </div>
+                      </li>,
+                      ...type[key][key2].map(t => {
+                        const Component = typeData[t.type];
+
+                        if (!Component) {
+                          return;
+                        }
+
+                        return (
+                          <li key={`${key}-${key2}-${t.name}`}>
+                            <Component props={{ data: t, chartData, setChartData, target: `${key}-${key2}-${t.name}` }} />
+                          </li>
+                        );
+                      })
+                    ]
+                  })]
               } else {
                 return [
                   <li key={key} className={styles.settingTitleListItem}>
@@ -56,17 +49,17 @@ const SettingSection = ({ props: { type, chartData, setChartData } }) => {
                   </li>,
                   ...type[key].map((t) => {
                     const Component = typeData[t.type];
-  
+
                     if (!Component) {
                       return;
                     }
-  
+
                     return (
                       <li key={`${key}-${t.name}`}>
                         <Component props={{ data: t, chartData, setChartData, target: `${key}-${t.name}` }} />
                       </li>
                     );
-                })];
+                  })];
               }
             })
           }

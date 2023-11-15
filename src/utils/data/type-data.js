@@ -4,6 +4,9 @@ import ObjectInputFieldset from "@/components/fieldset/object-input-fieldset/Obj
 import ColorInputFieldset from "@/components/fieldset/color-fieldset/ColorInputFieldset";
 import StringInputFieldset from "@/components/fieldset/string-input-fieldset/StringInputFieldset";
 import SelectFieldset from "@/components/fieldset/select-fieldset/SelectFieldset";
+import DescriptionFieldset from "@/components/fieldset/description-fieldset/DescriptionFieldset";
+import ArrayFieldset from "@/components/fieldset/array-fieldset/ArrayFieldset";
+import ColorPaletteFieldset from "@/components/fieldset/color-palette-fieldset/ColorPaletteFieldset";
 
 export const typeData = {
     "boolean": ToggleFieldset,
@@ -12,4 +15,7 @@ export const typeData = {
     "color": ColorInputFieldset,
     "string": StringInputFieldset,
     "select": SelectFieldset,
+    "description": DescriptionFieldset,
+    "array": ArrayFieldset,
+    "colorPalette": ColorPaletteFieldset,
 }

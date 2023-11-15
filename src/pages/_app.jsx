@@ -1,3 +1,4 @@
+import App from 'next/app';
 import Head from 'next/head'
 
 import "./globals.css";
@@ -13,6 +14,12 @@ function MyApp({ Component, pageProps }) {
       {getLayout(<Component {...pageProps} />)}
     </>
   );
+};
+
+MyApp.getInitialProps = async (appContext) => {
+  const appProps = await App.getInitialProps(appContext);
+
+  return { ...appProps };
 };
 
 export default MyApp;
