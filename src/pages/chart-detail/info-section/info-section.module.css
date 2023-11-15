@@ -1,0 +1,203 @@
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.selectList {
+  width: 100%;
+  height: 45px;
+
+  background-color: #f7fafb;
+
+  position: sticky;
+  top: 0;
+
+  display: flex;
+}
+
+.selectButton {
+  height: 45px;
+
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: #aaa;
+
+  transition: all 0.2s;
+}
+
+.selectButton>svg {
+  width: 20px;
+  height: 20px;
+}
+
+.selectButton:hover {
+  color: #669efe;
+}
+
+.selectList .selected {
+  background-color: white;
+
+  color: #669efe;
+}
+
+.selectedList {
+  width: 100%;
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+}
+
+.selectedList::-webkit-scrollbar {
+  width: 8px;
+  background-color: #eee;
+}
+
+.selectedList::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.selectedList::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+
+.selectedList::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+.selectedCandidate {
+  display: none;
+}
+
+.selectedList .selectedArea {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedArea>pre {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedArea>pre>div {
+  padding: 18px 25px;
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  background-color: #222;
+
+  font-size: 13px;
+}
+
+.annotation {
+  color: #999;
+}
+
+.emphasis {
+  color: #e25d47;
+}
+
+.hilight {
+  color: #f88d81;
+}
+
+.normal {
+  color: #ccc
+}
+
+.copyWrapper {
+  position: absolute;
+  top: 54px;
+  right: 20px;
+}
+
+.copyButton {
+  width: 28px;
+  height: 28px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #669efe;
+  border-radius: 5px;
+}
+
+.copyButton > svg {
+  width: 18px;
+  height: 18px;
+
+  color: #fff;
+}
+
+.alert {
+  width: 60px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: -40px;
+  right: 0px;
+
+  background-color: #669efe;
+  border-radius: 5px;
+
+  color: #fff;
+  font-size: 12px;
+
+  opacity: 0;
+}
+
+.alert::after {
+  content:"";
+  width: 10px;
+  height: 10px;
+
+  background-color: inherit;
+
+  position: absolute;
+  bottom: -4px;
+  right: 8px;
+
+  transform: rotate(45deg);
+}
+
+.show {
+  animation: fadeOut 2s;
+}

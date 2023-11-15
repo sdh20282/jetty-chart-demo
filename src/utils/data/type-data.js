@@ -6,6 +6,7 @@ import StringInputFieldset from "@/components/fieldset/string-input-fieldset/Str
 import SelectFieldset from "@/components/fieldset/select-fieldset/SelectFieldset";
 import DescriptionFieldset from "@/components/fieldset/description-fieldset/DescriptionFieldset";
 import ArrayFieldset from "@/components/fieldset/array-fieldset/ArrayFieldset";
+import ColorPaletteFieldset from "@/components/fieldset/color-palette-fieldset/ColorPaletteFieldset";
 
 export const typeData = {
     "boolean": ToggleFieldset,
@@ -16,4 +17,5 @@ export const typeData = {
     "select": SelectFieldset,
     "description": DescriptionFieldset,
     "array": ArrayFieldset,
+    "colorPalette": ColorPaletteFieldset,
 }

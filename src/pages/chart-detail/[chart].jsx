@@ -67,14 +67,22 @@ const ChartDetailPage = ({ name, data, type, value }) => {
             if (match) {
               return;
             }
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> main
             result[setting] ??= {};
             result[setting][detail] ??= chartData[setting][detail];
           } else {
             if (chartData[setting][detail] === value[setting][detail]) {
               return;
             }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> main
             result[setting] ??= {};
             result[setting][detail] ??= chartData[setting][detail];
           }
@@ -92,7 +100,11 @@ const ChartDetailPage = ({ name, data, type, value }) => {
           <h2>Jetty Chart Detail Page</h2>
         </header>
         {randomData.length !== 0 && chartData.normalSettings !== undefined && <SettingSection props={{ type, chartData, setChartData }} />}
+<<<<<<< HEAD
         {randomData.length !== 0 && chartData.normalSettings !== undefined && <DetailSection props={{ Chart, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
+=======
+        {randomData.length !== 0 && chartData.normalSettings !== undefined && <DetailSection props={{ Chart, name, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
+>>>>>>> main
       </section>
     </main>
   )
@@ -111,7 +123,10 @@ export const getStaticPaths = async () => {
   }));
 
   return { paths, fallback: false }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 }
 
 // 추후 chart data를 db에 저장 할 경우 해당 부분에서 가져옴

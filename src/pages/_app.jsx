@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import App from 'next/app';
+>>>>>>> main
 import Head from 'next/head'
 
 import "./globals.css";
@@ -15,4 +19,13 @@ function MyApp({ Component, pageProps }) {
   );
 };
 
+<<<<<<< HEAD
+=======
+MyApp.getInitialProps = async (appContext) => {
+  const appProps = await App.getInitialProps(appContext);
+
+  return { ...appProps };
+};
+
+>>>>>>> main
 export default MyApp;

@@ -27,6 +27,18 @@ export const normalBarType = {
   ],
   normalSettings: [
     {
+      name: "useVariousColors",
+      attribute: "boolean,optional",
+      description: "차트를 그릴 때 다양한 색상을 사용 할 지 여부를 의미합니다.",
+      type: "boolean",
+    },
+    {
+      name: "colorPalette",
+      attribute: "string[],optional",
+      description: "차트를 그릴 때 사용 할 색상을 의미합니다.",
+      type: "colorPalette",
+    },
+    {
       name: "width",
       attribute: "number,optional",
       description: "전체 차트 영역의 넓이를 의미합니다.",
@@ -72,18 +84,6 @@ export const normalBarType = {
       name: "horizontal",
       attribute: "boolean,optional",
       description: "차트의 방향이 수직인지, 수평인지를 의미합니다.",
-      type: "boolean",
-    },
-    {
-      name: "colorPalette",
-      attribute: "string[],optional",
-      description: "차트를 그릴 때 사용 할 색상을 의미합니다.",
-      type: "colorPalette",
-    },
-    {
-      name: "useVariousColors",
-      attribute: "boolean,optional",
-      description: "차트를 그릴 때 다양한 색상을 사용 할 지 여부를 의미합니다.",
       type: "boolean",
     }
   ],
