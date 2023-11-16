@@ -20,6 +20,7 @@ const chartComponentString = {
   "multi-line": "MultiLine",
   "stacked-line": "StackedLine",
   "bump": "BumpChart",
+  "scatter": "NormalScatter",
 };
 
 export const getChartComponentString = ({ chartName }) => {
