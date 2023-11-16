@@ -90,8 +90,8 @@ const ChartDetailPage = ({ name, data, type, value }) => {
         <header className="IROnly">
           <h2>Jetty Chart Detail Page</h2>
         </header>
-        {randomData.length !== 0 && (chartData.normalSettings !== undefined || chartData.generalSettings !== undefined) && <SettingSection props={{ type, chartData, setChartData }} />}
-        {randomData.length !== 0 && (chartData.normalSettings !== undefined || chartData.generalSettings !== undefined) && <DetailSection props={{ Chart, name, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
+        {randomData.length !== 0 && (chartData.normalSettings !== undefined || chartData.normalSetting !== undefined || chartData.generalSettings !== undefined) && <SettingSection props={{ type, chartData, setChartData }} />}
+        {randomData.length !== 0 && (chartData.normalSettings !== undefined || chartData.normalSetting !== undefined || chartData.generalSettings !== undefined) && <DetailSection props={{ Chart, name, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
       </section>
     </main>
   )

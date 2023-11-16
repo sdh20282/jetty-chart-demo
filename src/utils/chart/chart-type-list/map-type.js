@@ -8,7 +8,7 @@ export const mapChartType = {
     },
   ],
   // 기본세팅
-  normalSettings: [
+  normalSetting: [
     {
       name: "backgroundColor",
       attribute: "hex-code,optional",
@@ -151,16 +151,16 @@ export const mapChartType = {
       description: "gagueBar Value의 폰트 크기를 설정합니다.",
       type: "number",
       unit: "px",
-      dependency: ["gagueBarSetting-useGagueBar","useValueLavel"],
-      show: [true,true]
+      dependency: ["gagueBarSetting-useGagueBar", "gagueBarSetting-useValueLavel"],
+      show: [true, true]
     },
     {
       name: "gagueValueFontFamily",
       attribute: "string,optional",
       description: "gagueBar Value의 폰트를 설정합니다.",
       type: "string",
-      dependency: ["gagueBarSetting-useGagueBar","useValueLavel"],
-      show: [true,true]
+      dependency: ["gagueBarSetting-useGagueBar", "gagueBarSetting-useValueLavel"],
+      show: [true, true]
     
     },
     {
@@ -168,16 +168,16 @@ export const mapChartType = {
       attribute: "string,optional",
       description: "gagueBar Value의 폰트Weight를 설정합니다.",
       type: "string",
-      dependency: ["gagueBarSetting-useGagueBar","useValueLavel"],
-      show: [true,true]
+      dependency: ["gagueBarSetting-useGagueBar","gagueBarSetting-useValueLavel"],
+      show: [true, true]
     },
     {
       name: "valueLavel",
       attribute: "string,optional",
       description: "gagueBar Value의 Lavel을 설정합니다.",
       type: "string",
-      dependency: ["gagueBarSetting-useGagueBar","useValueLavel"],
-      show: [true,true]
+      dependency: ["gagueBarSetting-useGagueBar", "gagueBarSetting-useValueLavel"],
+      show: [true, true]
     },
   ],
 
@@ -264,43 +264,43 @@ export const mapChartType = {
       type: "string",
     },
     {
-        name: "descriptionFontSize",
-        attribute: "number,optional",
-        description: "tooltip, description의 FontSize를 조절합니다.",
-        type: "number",
-        unit: "px",
-      },
-      {
-        name: "descriptionColor",
-        attribute: "string,optional",
-        description: "tooltip, description의 Color를 조절합니다.",
-        type: "string",
-      },
-      {
-        name: "descriptionFontWeight",
-        attribute: "string,optional",
-        description: "tooltip 의 description의 FontWeight를 조절합니다.",
-        type: "string",
-      },
-      {
-        name: "tooltipOpacity",
-        attribute: "number,optional",
-        description: "tooltip 의 Opacity를 조절합니다.",
-        type: "number",
-      },
-      {
-        name: "useTooltipCol",
-        attribute: "boolean,optional",
-        description: "tooltip 의 cityName 과 cityValue 사이에 : 를 넣을지 설정합니다. ",
-        type: "boolean",
-      },
-      {
-        name: "useTooltipChart",
-        attribute: "boolean,optional",
-        description: "Zoomin 됐을경우 tooltip에 tooltipChart 를 사용할지 설정합니다. ",
-        type: "boolean",
-        dependency:"normalSetting-zoomOn",
-        show:true
-      },
-    ]
+      name: "descriptionFontSize",
+      attribute: "number,optional",
+      description: "tooltip, description의 FontSize를 조절합니다.",
+      type: "number",
+      unit: "px",
+    },
+    {
+      name: "descriptionColor",
+      attribute: "string,optional",
+      description: "tooltip, description의 Color를 조절합니다.",
+      type: "string",
+    },
+    {
+      name: "descriptionFontWeight",
+      attribute: "string,optional",
+      description: "tooltip 의 description의 FontWeight를 조절합니다.",
+      type: "string",
+    },
+    {
+      name: "tooltipOpacity",
+      attribute: "number,optional",
+      description: "tooltip 의 Opacity를 조절합니다.",
+      type: "number",
+    },
+    {
+      name: "useTooltipCol",
+      attribute: "boolean,optional",
+      description: "tooltip 의 cityName 과 cityValue 사이에 : 를 넣을지 설정합니다. ",
+      type: "boolean",
+    },
+    // {
+    //   name: "useTooltipChart",
+    //   attribute: "boolean,optional",
+    //   description: "Zoomin 됐을경우 tooltip에 tooltipChart 를 사용할지 설정합니다. ",
+    //   type: "boolean",
+    //   dependency:"normalSetting-zoomOn",
+    //   show:true
+    // },
+  ]
 }

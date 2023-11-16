@@ -10,12 +10,18 @@ export const checkDependency = ({ data, chartData }) => {
 
     data.dependency.map((dep, idx) => {
       const dependency = dep.split("-");
-      const state = dependency.length === 2 ? chartData[dependency[0]][dependency[1]] : chartData[dependency[0]][dependency[1]][dependency[2]];
 
-      if (state !== data.show[idx]) {
-        display = false;
+      try {
+        const state = dependency.length === 2 ? chartData[dependency[0]][dependency[1]] : chartData[dependency[0]][dependency[1]][dependency[2]];
 
-        return;
+        if (state !== data.show[idx]) {
+          display = false;
+  
+          return;
+        }
+      } catch (e) {
+        console.log(e);
+        console.log(data.dependency);
       }
     });
   } else {
