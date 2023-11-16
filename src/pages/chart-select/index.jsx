@@ -11,10 +11,11 @@ import styles from './chart-select.module.css';
 import { chartList } from '@/utils/chart/chart-list';
 import { getChartComponent } from '@/utils/chart/chart-component';
 import { getRandomData } from '@/utils/data/random-data';
+import { colorPalette } from '@/utils/color/colorPalette';
 
 const ChartSelectPage = () => {
   const [data, setData] = useState({});
-  const [over, setOver] = useState("");
+  // const [over, setOver] = useState("");
 
   useEffect(() => {
     const result = {};
@@ -26,6 +27,8 @@ const ChartSelectPage = () => {
     setData(result);
   }, []);
 
+  const colorKeys = Object.keys(colorPalette);
+
   return (
     <main>
       <section className={styles.section}>
@@ -34,7 +37,7 @@ const ChartSelectPage = () => {
         </header>
         <ul className={styles.list}>
           {
-            data && Object.keys(data).length !== 0 && chartList.map(chart => {
+            data && Object.keys(data).length !== 0 && chartList.map((chart, idx) => {
               return (
                 <li key={chart}>
                   <Link href={`chart-detail/${chart}`} className={styles.listItem}>
@@ -50,7 +53,9 @@ const ChartSelectPage = () => {
                                 normalSettings={{
                                   width: 280,
                                   height: 220,
-                                  margin: { top: 1, bottom: 1, left: 1, right: 1 }
+                                  margin: { top: 1, bottom: 1, left: 1, right: 1 },
+                                  colorPalette: colorPalette[colorKeys[(idx + 1) % colorKeys.length]],
+                                  useVariousColors: true
                                 }}
                                 generalSettings={{
                                   width: 280,
@@ -74,6 +79,11 @@ const ChartSelectPage = () => {
                                   },
                                   arcLinkLabelSettings: {
                                     arcLinkLabelIsUse: false
+                                  }
+                                } : {}}
+                                {...chart.indexOf("pyramid") !== -1 ? {
+                                  barSettings: {
+                                    useLabel: false
                                   }
                                 } : {}}
                               />
