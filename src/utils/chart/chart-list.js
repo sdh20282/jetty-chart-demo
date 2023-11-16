@@ -7,4 +7,5 @@ export const chartList = [
   "bump",
   "scatter",
   "pie",
+  "pyramid",
 ]

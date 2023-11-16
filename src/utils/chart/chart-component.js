@@ -1,4 +1,4 @@
-import { NormalBar, StackedBar, Pie, SingleLine, MultiLine, StackedLine, BumpChart, NormalScatter } from "jetty-chart";
+import { NormalBar, StackedBar, Pie, SingleLine, MultiLine, StackedLine, BumpChart, NormalScatter, NormalPyramid } from "jetty-chart";
 
 const chartComponent = {
   "normal-bar": NormalBar,
@@ -9,6 +9,7 @@ const chartComponent = {
   "bump": BumpChart,
   "scatter": NormalScatter,
   "pie": Pie,
+  "pyramid": NormalPyramid,
 }
 
 export const getChartComponent = ({ chartName }) => {
@@ -24,6 +25,7 @@ const chartComponentString = {
   "bump": "BumpChart",
   "scatter": "NormalScatter",
   "pie": "pie",
+  "pyramid": "NormalPyramid",
 };
 
 export const getChartComponentString = ({ chartName }) => {

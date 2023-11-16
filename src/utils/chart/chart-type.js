@@ -6,6 +6,7 @@ import { StackedBarType } from "./chart-type-list/stacked-bar-type"
 import { stackedLineType } from "./chart-type-list/stacked-line-type";
 import { ScatterType } from "./chart-type-list/scatter-type";
 import { pieType } from "./chart-type-list/pie-type";
+import { pyramidType } from "./chart-type-list/pyramid-type"
 
 const chartType = {
   "normal-bar": normalBarType,
@@ -15,6 +16,7 @@ const chartType = {
   "stacked-line": stackedLineType,
   "bump": bumpChartType,
   "scatter": ScatterType,
+  "pyramid": pyramidType,
   "pie": pieType,
 };
 
