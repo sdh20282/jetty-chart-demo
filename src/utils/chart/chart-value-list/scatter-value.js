@@ -1,5 +1,9 @@
 export const ScatterValue = {
   // 기본 세팅
+  base: {
+    xLegend: "",
+    yLegend: "",
+  },
   normalSettings: {
     width: 500,
     height: 400,
@@ -246,30 +250,4 @@ export const ScatterValue = {
       translateTimingFunction: "ease",
     },
   },
-};
-
-export const checkNormalPoint = ({
-  normalSettings,
-  scopeSettings,
-  axisXGridLineSettings,
-  axisYGridLineSettings,
-  leftLabelSettings,
-  rightLabelSettings,
-  bottomLabelSettings,
-  topLabelSettings,
-  pointSettings,
-  animationSettings,
-}) => {
-  const result = {
-    normalSettings,
-    scopeSettings,
-    axisXGridLineSettings,
-    axisYGridLineSettings,
-    leftLabelSettings,
-    rightLabelSettings,
-    bottomLabelSettings,
-    topLabelSettings,
-    pointSettings,
-    animationSettings,
-  };
 };
