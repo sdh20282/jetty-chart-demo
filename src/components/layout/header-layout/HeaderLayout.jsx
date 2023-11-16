@@ -5,16 +5,13 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 import styles from './header-layout.module.css'
 
-// import Logo from '../../../assets/images/LogoLast.svg';
-
 const HeaderLayout = ({ children }) => {
   return (
     <>
       <header className={styles.header}>
         <h1 className={styles.title}>
           <Link href="/">
-            Jetty Chart
-            {/* <Logo /> */}
+            Jetty-Chart
           </Link>
         </h1>
         <nav>

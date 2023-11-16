@@ -38,7 +38,7 @@ const ChartSelectPage = () => {
               return (
                 <li key={chart}>
                   <Link href={`chart-detail/${chart}`} className={styles.listItem}>
-                    <div className={styles.chartArea}>
+                    <div className={`${styles.chartArea} ${chart.indexOf("pie") !== -1 ? styles.scale : null}`}>
                       {
                         (() => {
                           const Chart = getChartComponent({ chartName: chart });
@@ -52,17 +52,42 @@ const ChartSelectPage = () => {
                                   height: 220,
                                   margin: { top: 1, bottom: 1, left: 1, right: 1 }
                                 }}
-                                {...chart.indexOf("bar") !== -1 ? {barSettings: {
-                                  useLabel: false
-                                }} : {}}
+                                generalSettings={{
+                                  width: 280,
+                                  height: 220,
+                                  paddingTop: 1,
+                                  paddingBottom: 1,
+                                  paddingLeft: 1,
+                                  paddingRight: 1,
+                                }}
+                                {...chart.indexOf("bar") !== -1 ? {
+                                  barSettings: {
+                                    useLabel: false
+                                  }
+                                } : {}}
+                                {...chart.indexOf("pie") !== -1 ? {
+                                  legendSettings: {
+                                    useLegend: false
+                                  },
+                                  labelSettings: {
+                                    labelIsUse: false
+                                  },
+                                  arcLinkLabelSettings: {
+                                    arcLinkLabelIsUse: false
+                                  }
+                                } : {}}
                               />
                             </>
                           )
                         })()
                       }
                     </div>
-                    <p className={styles.chartName}>{chart}</p>
                   </Link>
+                  <div className={styles.nameWrapper}>
+                    <p className={styles.chartName}>{chart}</p>
+                    <p className={`${styles.support} ${styles.react}`}>React</p>
+                    <p className={`${styles.support} ${styles.next}`}>Next</p>
+                  </div>
                 </li>
               );
             })

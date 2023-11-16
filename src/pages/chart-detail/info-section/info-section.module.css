@@ -58,13 +58,13 @@
 }
 
 .selectButton:hover {
-  color: #caa5fa;
+  color: #a263f5;
 }
 
 .selectList .selected {
   background-color: white;
 
-  color: #c664fe;
+  color: #973eca;
 }
 
 .selectedList {
@@ -131,11 +131,11 @@
 }
 
 .emphasis {
-  color: #fe66aa;
+  color: rgb(243, 69, 147);
 }
 
 .hilight {
-  color: #caa5fa;
+  color: #bd56f8;
 }
 
 .normal {
@@ -144,23 +144,23 @@
 
 .copyWrapper {
   position: absolute;
-  top: 54px;
-  right: 20px;
+  top: 62px;
+  right: 30px;
 }
 
 .copyButton {
   width: 28px;
   height: 28px;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: #ca88e3;
+  background-color: #763e96;
   border-radius: 5px;
 }
 
-.copyButton > svg {
+.copyButton>svg {
   width: 18px;
   height: 18px;
 
@@ -179,7 +179,7 @@
   top: -40px;
   right: 0px;
 
-  background-color: #ca88e3;
+  background-color: #763e96;
   border-radius: 5px;
 
   color: #fff;
@@ -189,7 +189,7 @@
 }
 
 .alert::after {
-  content:"";
+  content: "";
   width: 10px;
   height: 10px;
 

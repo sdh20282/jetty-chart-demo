@@ -11,7 +11,7 @@ const ColorInputFieldset = ({ props: { data, chartData, setChartData, target } }
   if (!display) {
     return;
   }
-  
+
   let color = targetParse.length === 2 ? chartData[targetParse[0]][targetParse[1]] : chartData[targetParse[0]][targetParse[1]][targetParse[2]];
 
   if (color.length === 4) {
@@ -36,8 +36,8 @@ const ColorInputFieldset = ({ props: { data, chartData, setChartData, target } }
       <legend className="IROnly">{data.name} 설정 영역</legend>
       <FieldsetTitle props={{ data }} />
       <div className={styles.colorPickerWrapper}>
-        <label htmlFor={`${data.name}-color-input`} className="IROnly">${data.name} 입력</label>
-        <input type="color" id={`${data.name}-color-input`} className={styles.colorInput} defaultValue={color} onChange={handleChange} />
+        <label htmlFor={`${target}-${data.name}-color-input`} className="IROnly">${data.name} 입력</label>
+        <input type="color" id={`${target}-${data.name}-color-input`} className={styles.colorInput} defaultValue={color} onChange={handleChange} />
         <p className={styles.color}>{color}</p>
       </div>
       <p className={styles.description}>{data.description}</p>

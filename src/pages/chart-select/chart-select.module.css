@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
 .section {
   width: 100vw;
@@ -39,7 +40,7 @@
   height: 0;
 }
 
-.list > li {
+.list>li {
   padding-bottom: 20px;
 }
 
@@ -58,17 +59,59 @@
 
 .chartArea {
   width: 100%;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.chartName {
-  /* margin: 8px auto 15px 12px; */
+.scale svg {
+  scale: 1.7;
+}
 
-  color: #777;
-  font-size: 16px;
-  font-weight: 400;
+.nameWrapper {
+  width: 100%;
+
+  padding: 15px 8px;
+
+  display: flex;
+  align-items: center;
+}
+
+.chartName {
+  margin-right: auto;
+
+  color: #7e638b;
+  font-size: 15px;
+  font-weight: 700;
   font-family: 'Open Sans', sans-serif;
+}
+
+.support {
+  display: block;
+  text-align: center;
+  margin-left: 4px;
+
+  border-radius: 5px;
+
+  padding: 5px 6px 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #293c55;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'Gugi', sans-serif;
+}
+
+.react {
+  background-color: #61dafb;
+  color: #fff;
+}
+
+.next {
+  background-color: #171717;
+  color: #fff;
 }

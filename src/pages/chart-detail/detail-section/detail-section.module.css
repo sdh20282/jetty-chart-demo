@@ -28,11 +28,11 @@
 
   position: absolute;
 
-  background-color: #e6aefa;
+  background-color: #993c66;
   border-radius: 7px;
 
   top: 20px;
-  right: 20px;
+  right: 22px;
 }
 
 .refreshButton>svg {

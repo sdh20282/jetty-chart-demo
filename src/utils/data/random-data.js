@@ -1,7 +1,7 @@
 const counts = [5, 6, 7];
 
 export const getRandomData = ({ chartName }) => {
-  if (chartName === "normal-bar" || chartName === "single-line") {
+  if (chartName === "normal-bar" || chartName === "single-line" || chartName === "pie") {
     const arr = [];
 
     for (let index = 0; index < counts[Math.floor(Math.random() * counts.length)]; index++) {

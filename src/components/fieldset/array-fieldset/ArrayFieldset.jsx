@@ -75,7 +75,7 @@ const ArrayFieldset = ({ props: { data, chartData, setChartData, target } }) => 
               ? chartData[targetParse[0]][targetParse[1]]
               : chartData[targetParse[0]][targetParse[1]][targetParse[2]]).map((item, idx) => {
                 return (
-                  <li key={`${item}-${idx}`} className={styles.hash}>
+                  <li key={`${target}-${item}-${idx}`} className={styles.hash}>
                     <p>{item}</p>
                     <button onClick={(e) => handleClickRemove(e, item)}>
                       <ClearIcon />
@@ -89,7 +89,7 @@ const ArrayFieldset = ({ props: { data, chartData, setChartData, target } }) => 
       }
       <div className={styles.inputWrapper}>
         <StringInput props={{
-          id: `${data.name}-input`,
+          id: `${target}-${data.name}-input`,
           name: data.name,
           unit: data.unit,
           value: input,

@@ -31,15 +31,16 @@ const StringInputFieldset = ({ props: { data, chartData, setChartData, target } 
       <legend className="IROnly">{data.name} 설정 영역</legend>
       <FieldsetTitle props={{ data }} />
       <div className={styles.inputWrapper}>
-        <StringInput props={{ 
-          id: `${data.name}-input`, 
-          name: data.name, 
-          unit: data.unit, 
-          value: 
-            targetParse.length === 2 
-            ? chartData[targetParse[0]][targetParse[1]] 
-            : chartData[targetParse[0]][targetParse[1]][targetParse[2]],
-          onChange: handleChange }} />
+        <StringInput props={{
+          id: `${target}-${data.name}-input`,
+          name: data.name,
+          unit: data.unit,
+          value:
+            targetParse.length === 2
+              ? chartData[targetParse[0]][targetParse[1]]
+              : chartData[targetParse[0]][targetParse[1]][targetParse[2]],
+          onChange: handleChange
+        }} />
         <p className={styles.description}>{data.description}</p>
       </div>
     </fieldset>
