@@ -99,7 +99,7 @@ export const getRandomData = ({ chartName }) => {
   } else if (chartName === "pyramid") {
     const groups = [];
 
-    for (let index = 0; index < 100; index += 10) {
+    for (let index = 0; index < 70; index += 10) {
       const group = {};
 
       group.id = `${index}~${index + 9}`;

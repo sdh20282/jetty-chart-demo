@@ -14,7 +14,7 @@ const DetailSection = ({ props: { Chart, name, data, chartData, setData, updateD
   }, []);
 
   return (
-    <section key={JSON.stringify({...base, ...chartData})} className={styles.settingSection}>
+    <section key={JSON.stringify({ ...base, ...chartData })} className={styles.settingSection}>
       <header className="IROnly">
         <h3>Chart Detail Section</h3>
       </header>
