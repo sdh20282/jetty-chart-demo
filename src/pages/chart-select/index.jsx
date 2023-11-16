@@ -86,6 +86,12 @@ const ChartSelectPage = () => {
                                     useLabel: false
                                   }
                                 } : {}}
+                                {...chart.indexOf("map") !== -1 ? {
+                                  normalSetting: {
+                                    width: 215,
+                                    colorPalette: colorPalette[colorKeys[(idx + 1) % colorKeys.length]],
+                                  }
+                                } : {}}
                               />
                             </>
                           )
