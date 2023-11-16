@@ -5,4 +5,5 @@ export const chartList = [
   "multi-line",
   "stacked-line",
   "bump",
+  "scatter",
 ]

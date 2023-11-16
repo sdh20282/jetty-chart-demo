@@ -76,5 +76,22 @@ export const getRandomData = ({ chartName }) => {
       rankData.push(d);
     }
     return rankData;
+  } else if (chartName === "scatter") {
+    const groups = [];
+
+    for (let index = 0; index < 10; index++) {
+      const group = {};
+      group.id = `group ${index}`;
+      const arr = [];
+      for (let index = 0; index < 30; index++) {
+        arr.push({
+          x: Math.floor(Math.random() * 130) + 10,
+          y: Math.floor(Math.random() * 130) + 10,
+        });
+      }
+      group.data = arr;
+      groups.push(group);
+    }
+    return groups;
   }
 };
