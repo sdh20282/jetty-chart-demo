@@ -1,9 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
 .section {
   width: 100vw;
-  /* height: 100vh; */
 }
 
 .list {
+  width: 100vw;
+  height: calc(100vh - 70px);
+
+  background-color: #f7fafb;
+
+  overflow-y: scroll;
+
+  padding: 40px 60px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.list::-webkit-scrollbar {
+  width: 8px;
+  background-color: #eee;
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+
+.list::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+.list > li {
+  padding-bottom: 20px;
+}
+
+.listItem {
+  width: 100%;
+  padding: 35px 10px;
+
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: #f4f4f4 0 0 20px 2px;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.chartArea {
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chartName {
+  /* margin: 8px auto 15px 12px; */
+
+  color: #777;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
 }

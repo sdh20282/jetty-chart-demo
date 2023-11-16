@@ -8,6 +8,7 @@ const chartComponent = {
   "stacked-line": StackedLine,
   "bump": BumpChart,
   "scatter": NormalScatter,
+  "pie": Pie,
 }
 
 export const getChartComponent = ({ chartName }) => {
@@ -22,6 +23,7 @@ const chartComponentString = {
   "stacked-line": "StackedLine",
   "bump": "BumpChart",
   "scatter": "NormalScatter",
+  "pie": "pie",
 };
 
 export const getChartComponentString = ({ chartName }) => {

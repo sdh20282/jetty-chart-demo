@@ -30,13 +30,13 @@
   height: 18px;
 
   border-radius: 30px;
-  background-color: rgb(233, 132, 115);
+  background-color: #fe66aa;
 
   transition: 0.4s
 }
 
 .toggleBackgroundChecked {
-  background-color: rgb(109, 198, 183);
+  background-color: #c664fe;
 
   transition: 0.4s
 }
