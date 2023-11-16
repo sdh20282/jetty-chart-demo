@@ -1,32 +1,23 @@
-.container {
-  overflow-x: hidden;
-  min-width: 1200px;
-  min-height: 1200px;
-}
 
 .section {
-  width: 100vw;
-  height: 100vh;
-
+  border-top: 1px solid #ddd;
+  padding-top: 0.2%;
+  margin-top: 3%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   background-color: white;
 }
 
 .title {
-  width: 50%;
+  margin-top: 6%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
   align-items: center;
-  margin-bottom: 2%;
-  margin-top: 3%;
+  width: 40%;
 }
 
 .logo {
-  width: 40%;
-  height: 40%;
+  width: 43%;
   margin-bottom: 3%;
 }
 
@@ -37,7 +28,6 @@
 }
 
 .linkunit {
-  z-index: 9999;
   display: flex;
   width: 30%;
   margin-left: 3%;
@@ -81,20 +71,15 @@
 
 
 .imgChart {
-  width: 25%;
-  height: 85%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 9000;
+  margin-top: 9%;
+  position: relative;
+  width: 100%;
+  margin-left: 1.4%;
+  
 }
 
 .piepie {
-  width: 21%;
-  height: 41%;
-  position: absolute;
-  right: 0;
-  top: 0;
+  width: 70%;
 }
 
 .quarterpie {
@@ -106,6 +91,7 @@
 }
 
 .titletext {
-  width: 40%;
-  margin-top: 3%;
+  width: 35%;
+  margin-top: 2%;
+  margin-bottom: 5%;
 }
