@@ -1,4 +1,11 @@
+import { colorPalette } from "@/utils/color/colorPalette";
+
 export const bumpChartValue = {
+  base: {
+    keys: [],
+    xLegend: "",
+    yLegend: "",
+  },
   // 기본 세팅
   normalSettings: {
     width: 500,
@@ -6,20 +13,7 @@ export const bumpChartValue = {
     backgroundColor: "#fff",
     margin: { top: 50, bottom: 50, left: 80, right: 80 },
     innerMargin: { top: 0, bottom: 0 },
-    colorPalette: [
-      "#8ecae6",
-      "#219ebc",
-      "#2364aa",
-      "#ffb703",
-      "#fb8500",
-      "#fb5607",
-      "#ff006e",
-      "#8338ec",
-      "#6a994e",
-      "#00f5d4",
-      "#003e1f",
-      "#92140c",
-    ],
+    colorPalette: colorPalette.diffrent,
     padding: 0,
     reverse: false,
     horizontal: false,

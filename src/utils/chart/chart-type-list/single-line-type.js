@@ -1,5 +1,37 @@
 export const singleLineType = {
+  base: [
+    {
+      name: "data",
+      attribute: "object[],required",
+      description: "차트의 데이터를 의미합니다. { value:number, label:string } 형태로 입력해야 합니다.",
+      type: "description",
+    },
+    {
+      name: "title",
+      attribute: "string,optional",
+      description: "차트 데이터의 이름을 의미합니다. 데이터에서 입력한 라벨의 순서와 동일해야 합니다.",
+      type: "string",
+    },
+    {
+      name: "yLegend",
+      attribute: "string,optional",
+      description: "y축에 대한 설명입니다.",
+      type: "string",
+    },
+    {
+      name: "xLegend",
+      attribute: "string,optional",
+      description: "x축에 대한 설명입니다.",
+      type: "string",
+    },
+  ],
   normalSettings: [
+    {
+      name: "colorPalette",
+      attribute: "string[],optional",
+      description: "차트를 그릴 때 사용 할 색상을 의미합니다.",
+      type: "colorPalette",
+    },
     {
       name: "width",
       attribute: "number,optional",
@@ -47,12 +79,6 @@ export const singleLineType = {
       attribute: "boolean,optional",
       description: "차트의 방향이 수직인지, 수평인지를 의미합니다.",
       type: "boolean",
-    },
-    {
-      name: "colorPalette",
-      attribute: "string[],optional",
-      description: "차트를 그릴 때 사용 할 색상을 의미합니다.",
-      type: "colorPalette",
     },
   ],
   scopeSettings: [

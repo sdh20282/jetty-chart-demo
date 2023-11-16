@@ -1,4 +1,10 @@
+import { colorPalette } from "@/utils/color/colorPalette";
+
 export const stackedLineValue = {
+  base: {
+    xLegend: "",
+    yLegend: "",
+  },
   // 기본 세팅
   normalSettings: {
     width: 500,
@@ -6,7 +12,7 @@ export const stackedLineValue = {
     backgroundColor: "#fff",
     margin: { top: 60, bottom: 70, left: 80, right: 100 },
     innerMargin: { top: 0, bottom: 0 },
-    colorPalette: ["#dddd00", "#dddd00"],
+    colorPalette: colorPalette.jetty,
     padding: 0,
     reverse: false,
     horizontal: false,
