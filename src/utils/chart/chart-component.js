@@ -16,8 +16,12 @@ export const getChartComponent = ({ chartName }) => {
 
 const chartComponentString = {
   "normal-bar": "NormalBar",
-  // "stacked-bar": "StackedBar",
-}
+  "stacked-bar": "StackedBar",
+  "single-line": "SingleLine",
+  "multi-line": "MultiLine",
+  "stacked-line": "StackedLine",
+  "bump": "BumpChart",
+};
 
 export const getChartComponentString = ({ chartName }) => {
   return chartComponentString[chartName];

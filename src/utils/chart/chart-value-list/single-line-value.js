@@ -1,4 +1,11 @@
+import { colorPalette } from "@/utils/color/colorPalette";
+
 export const singleLineValue = {
+  base: {
+    title: "",
+    xLegend: "",
+    yLegend: "",
+  },
   // 기본 세팅
   normalSettings: {
     width: 500,
@@ -6,7 +13,7 @@ export const singleLineValue = {
     backgroundColor: "#fff",
     margin: { top: 60, bottom: 70, left: 80, right: 100 },
     innerMargin: { top: 0, bottom: 0 },
-    colorPalette: ["#dddd00", "#dddd00"],
+    colorPalette: colorPalette.jetty,
     padding: 0,
     reverse: false,
     horizontal: false,
@@ -182,8 +189,10 @@ export const singleLineValue = {
     lineWidth: 2,
     enablePoint: true,
     pointColor: "#F00",
+    pointColorFollowLineColor: true,
     pointSize: 2,
     pointBorderColor: "#666",
+    pointBorderColorFollowLineColor: true,
     pointBorderWidth: 2,
     enablePointLabel: false,
     showLabelOnHover: false,
@@ -193,7 +202,6 @@ export const singleLineValue = {
     pointLabelOffsetY: -10,
     pointLabelWeight: 500,
     enableArea: false,
-    areaColor: "#F00",
     areaOpacity: 0.5,
     enableCurve: false,
     smoothDegree: 0.15,
