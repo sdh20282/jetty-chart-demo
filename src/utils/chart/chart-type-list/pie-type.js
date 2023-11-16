@@ -216,7 +216,7 @@ export const pieType = {
       attribute: "string,optional",
       description: "레이블의 폰트를 의미합니다.",
       type: "string",
-      dependency: "labelIsUse",
+      dependency: "labelSettings-labelIsUse",
       show: true,
     },
     {

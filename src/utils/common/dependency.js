@@ -28,6 +28,7 @@ export const checkDependency = ({ data, chartData }) => {
         display = true;
       }
     } catch {
+      console.log(data);
       console.log(dependency[0], dependency[1]);
     }
   }
