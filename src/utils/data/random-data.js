@@ -96,5 +96,28 @@ export const getRandomData = ({ chartName }) => {
       groups.push(group);
     }
     return groups;
+  } else if (chartName === "pyramid") {
+    const groups = [];
+
+    for (let index = 0; index < 100; index += 10) {
+      const group = {};
+
+      group.id = `${index}~${index + 9}`;
+
+      const arr = [];
+
+      arr.push({
+        value: Math.floor(Math.random() * 900) + 10,
+        label: "x",
+      });
+      arr.push({
+        value: Math.floor(Math.random() * 900) + 10,
+        label: "y",
+      });
+
+      group.arr = arr;
+      groups.push(group);
+    }
+    return groups;
   }
 };
