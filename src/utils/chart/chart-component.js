@@ -25,7 +25,7 @@ const chartComponentString = {
   "stacked-line": "StackedLine",
   "bump": "BumpChart",
   "scatter": "NormalScatter",
-  "pie": "pie",
+  "pie": "Pie",
   "pyramid": "NormalPyramid",
   "map": "NormalMap"
 };
