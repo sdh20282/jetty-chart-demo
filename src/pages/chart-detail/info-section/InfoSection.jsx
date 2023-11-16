@@ -14,6 +14,10 @@ const closes = ["}", "]"];
 const nexts = ["{", "[", "}", "]", ","];
 
 const parseJSON = ({ string, toProps, initTabSize }) => {
+  if (!string) {
+    return "";
+  }
+
   let tabWidth = initTabSize;
   let newLine = true;
   let isKey = true;

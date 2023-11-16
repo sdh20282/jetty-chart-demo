@@ -5,6 +5,7 @@ import { singleLineValue } from "./chart-value-list/single-line-value";
 import { StackedBarValue } from "./chart-value-list/stacked-bar-value";
 import { stackedLineValue } from "./chart-value-list/stacked-line-value";
 import { ScatterValue } from "./chart-value-list/scatter-value";
+import { pieValue } from "./chart-value-list/pie-value";
 
 const chartValue = {
   "normal-bar": normalBarValue,
@@ -14,6 +15,7 @@ const chartValue = {
   "stacked-line": stackedLineValue,
   "bump": bumpChartValue,
   "scatter": ScatterValue,
+  "pie": pieValue,
 };
 
 export const getChartValue = ({ chartName }) => {

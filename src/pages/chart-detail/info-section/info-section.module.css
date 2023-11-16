@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap');
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -26,7 +28,7 @@
   width: 100%;
   height: 45px;
 
-  background-color: #f7fafb;
+  background-color: rgb(247, 250, 251);
 
   position: sticky;
   top: 0;
@@ -44,6 +46,8 @@
   gap: 4px;
 
   color: #aaa;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: 700;
 
   transition: all 0.2s;
 }
@@ -54,13 +58,13 @@
 }
 
 .selectButton:hover {
-  color: #669efe;
+  color: #a263f5;
 }
 
 .selectList .selected {
   background-color: white;
 
-  color: #669efe;
+  color: #973eca;
 }
 
 .selectedList {
@@ -127,11 +131,11 @@
 }
 
 .emphasis {
-  color: #e25d47;
+  color: rgb(243, 69, 147);
 }
 
 .hilight {
-  color: #f88d81;
+  color: #bd56f8;
 }
 
 .normal {
@@ -140,23 +144,23 @@
 
 .copyWrapper {
   position: absolute;
-  top: 54px;
-  right: 20px;
+  top: 62px;
+  right: 30px;
 }
 
 .copyButton {
   width: 28px;
   height: 28px;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: #669efe;
+  background-color: #763e96;
   border-radius: 5px;
 }
 
-.copyButton > svg {
+.copyButton>svg {
   width: 18px;
   height: 18px;
 
@@ -175,7 +179,7 @@
   top: -40px;
   right: 0px;
 
-  background-color: #669efe;
+  background-color: #763e96;
   border-radius: 5px;
 
   color: #fff;
@@ -185,7 +189,7 @@
 }
 
 .alert::after {
-  content:"";
+  content: "";
   width: 10px;
   height: 10px;
 

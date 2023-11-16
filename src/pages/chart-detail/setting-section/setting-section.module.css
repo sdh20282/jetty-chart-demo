@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
 .settingSection {
-  width: 100%;
-  height: calc(100vh - 60px);
+  width: 50vw;
+  height: calc(100vh - 70px);
 
   overflow-y: auto;
 }
@@ -43,16 +45,17 @@
   top: 0px;
 
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 .settingTitleWrapper {
-  width: 100%;
+  width: 100vw;
   height: 50px;
 
   display: flex;
   align-items: center;
 
-  background-color: #669efe;
+  background-image: linear-gradient(to right, #763e96, #993c66);
 }
 
 .settingTitle {
@@ -61,4 +64,5 @@
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
 }

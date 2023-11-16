@@ -21,7 +21,7 @@ const ObjectInputFieldset = ({ props: { data, chartData, setChartData, target } 
       if (isNaN(e.target.value)) {
         return;
       }
-  
+
       value = Number(value);
     }
 
@@ -45,15 +45,16 @@ const ObjectInputFieldset = ({ props: { data, chartData, setChartData, target } 
               return (
                 <li key={property}>
                   <p className={styles.objectPropertyDescription}>{property}</p>
-                  <NumberInput props={{ 
-                    id: `${data.name}-${property}-input`, 
-                    name: data.name, 
+                  <NumberInput props={{
+                    id: `${target}-${data.name}-${property}-input`,
+                    name: data.name,
                     unit: data.objectPropertiesUnit[idx],
-                    value: 
-                      targetParse.length === 2 
-                      ? chartData[targetParse[0]][targetParse[1]][property] 
-                      : chartData[targetParse[0]][targetParse[1]][targetParse[2]][property],
-                    onChange: (e) => { handleChange({ e, target: property, type: data.objectPropertiesType[idx] }) } }}  />
+                    value:
+                      targetParse.length === 2
+                        ? chartData[targetParse[0]][targetParse[1]][property]
+                        : chartData[targetParse[0]][targetParse[1]][targetParse[2]][property],
+                    onChange: (e) => { handleChange({ e, target: property, type: data.objectPropertiesType[idx] }) }
+                  }} />
                 </li>
               )
             }

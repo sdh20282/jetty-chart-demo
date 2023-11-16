@@ -3,15 +3,18 @@ import InfoSection from '../info-section/InfoSection';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
 import styles from './detail-section.module.css'
+import { useEffect } from 'react';
 
-const selectList = ["코드 보기", "데이터 보기"]
-
-const DetailSection = ({ props: { Chart, name, data, chartData, updateData } }) => {
+const DetailSection = ({ props: { Chart, name, data, chartData, setData, updateData } }) => {
   const base = chartData.base;
   delete chartData.base;
 
+  useEffect(() => {
+    updateData();
+  }, []);
+
   return (
-    <section key={JSON.stringify(chartData)} className={styles.settingSection}>
+    <section key={JSON.stringify({...base, ...chartData})} className={styles.settingSection}>
       <header className="IROnly">
         <h3>Chart Detail Section</h3>
       </header>
