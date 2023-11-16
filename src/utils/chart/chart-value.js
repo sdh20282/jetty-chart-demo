@@ -7,6 +7,7 @@ import { stackedLineValue } from "./chart-value-list/stacked-line-value";
 import { ScatterValue } from "./chart-value-list/scatter-value";
 import { pieValue } from "./chart-value-list/pie-value";
 import { pyramidValue } from "./chart-value-list/pyramid-value";
+import { mapChartValue } from "./chart-value-list/map-value";
 
 const chartValue = {
   "normal-bar": normalBarValue,
@@ -18,6 +19,7 @@ const chartValue = {
   "scatter": ScatterValue,
   "pie": pieValue,
   "pyramid": pyramidValue,
+  "map": mapChartValue,
 };
 
 export const getChartValue = ({ chartName }) => {

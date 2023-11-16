@@ -8,4 +8,5 @@ export const chartList = [
   "scatter",
   "pie",
   "pyramid",
+  "map"
 ]
