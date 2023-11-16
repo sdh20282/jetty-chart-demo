@@ -239,11 +239,12 @@ const InfoSection = ({ props: { name, data, base, chartData } }) => {
       await navigator.clipboard.writeText(copyTarget.current.textContent);
 
       copyText.current.classList.remove(`${styles.show}`);
-      
+
       setTimeout(() => {
         copyText.current.classList.add(`${styles.show}`);
       }, 100);
     } catch (e) {
+      console.log(e);
       alert('복사에 실패하였습니다');
     }
   }
@@ -280,7 +281,7 @@ const InfoSection = ({ props: { name, data, base, chartData } }) => {
         </li>
       </ul>
       <div className={styles.copyWrapper}>
-        <button className={styles.copyButton} onClick={() => {handleClickCopy({ target: selected === selectList[0] ? selectList[0] : selectList[1] })}}>
+        <button className={styles.copyButton} onClick={() => { handleClickCopy({ target: selected === selectList[0] ? selectList[0] : selectList[1] }) }}>
           <ContentCopyIcon />
           <span className="IROnly">복사</span>
         </button>
