@@ -519,4 +519,12 @@ export const pieType = {
       show: true,
     },
   ],
+  tooltipSettings: [
+    {
+      name: "tooltipUse",
+      attribute: "boolean,optional",
+      description: "툴팁을 사용할 지 여부를 의미합니다.",
+      type: "boolean",
+    }
+  ],
 };

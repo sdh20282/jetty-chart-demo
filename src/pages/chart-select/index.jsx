@@ -45,6 +45,7 @@ const ChartSelectPage = () => {
                       {
                         (() => {
                           const Chart = getChartComponent({ chartName: chart });
+                          const nowColor = colorPalette[colorKeys[idx + (Math.floor(Math.random() * 10)) % colorKeys.length]];
 
                           return (
                             <>
@@ -54,7 +55,7 @@ const ChartSelectPage = () => {
                                   width: 280,
                                   height: 220,
                                   margin: { top: 1, bottom: 1, left: 1, right: 1 },
-                                  colorPalette: colorPalette[colorKeys[(idx + 1) % colorKeys.length]],
+                                  colorPalette: nowColor.reverse(),
                                   useVariousColors: true
                                 }}
                                 generalSettings={{

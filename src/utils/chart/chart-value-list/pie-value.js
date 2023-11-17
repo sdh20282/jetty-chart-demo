@@ -3,7 +3,7 @@ const DEFAULT_HEIGHT = 400;
 const DEFAULT_BACKGROUND_COLOR = "transparent";
 const DEFAULT_PIE_BACKGROUND_COLOR = "transparent";
 const DEFAULT_DONUT_BACKGROUND_COLOR = "transparent";
-const DEFAULT_PADDING = 10;
+const DEFAULT_PADDING = 0;
 const DEFAULT_PIE_OPACITY = 1;
 const DEFAULT_CIRCLE_OPACITY = 1;
 const DEFAULT_DONUT_OPACITY = 1;
@@ -199,4 +199,7 @@ export const pieValue = {
     legendColor: DEFAULT_LEGEND_COLOR,
     legendOnStart: DEFAULT_LEGEND_ON_START,
   },
+  tooltipSettings: {
+    tooltipUse: true,
+  }
 };

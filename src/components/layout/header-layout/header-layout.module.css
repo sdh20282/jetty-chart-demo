@@ -10,11 +10,6 @@
   align-items: center;
   justify-content: space-between;
 
-  /* border-bottom: 1px solid transparent;
-  border-radius: 50%;
-  border-image: linear-gradient(to right, #c664fe, #864060);
-  border-image-slice: 1; */
-
   background-image: linear-gradient(to right, #763e96, #993c66);
 }
 

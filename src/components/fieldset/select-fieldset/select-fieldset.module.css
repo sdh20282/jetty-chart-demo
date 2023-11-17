@@ -11,9 +11,10 @@
 }
 
 .selectList {
-  width: 100%;
+  width: calc(50vw - 120px);
 
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
