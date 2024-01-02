@@ -9,8 +9,8 @@
 }
 
 .settingSection {
-  width: 100%;
-  height: calc(100vh - 60px);
+  width: 50vw;
+  height: calc(100vh - 70px);
 
   position: relative;
 
@@ -19,8 +19,8 @@
 }
 
 .refreshButton {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
 
   display: flex;
   align-items: center;
@@ -28,21 +28,20 @@
 
   position: absolute;
 
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #669efe;
+  background-color: #993c66;
+  border-radius: 7px;
 
   top: 20px;
-  right: 20px;
+  right: 22px;
 }
 
 .refreshButton>svg {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
 
-  padding: 5px;
+  padding: 3px;
 
-  color: #669efe;
+  color: #fff;
 }
 
 .refreshButton>svg:hover {
@@ -54,7 +53,7 @@
 
   /* padding: 6px 0 12px; */
 
-  background-color: #f7fafb;
+  background-color: #fff;
 
   display: flex;
   justify-content: center;

@@ -6,4 +6,7 @@ export const chartList = [
   "stacked-line",
   "bump",
   "scatter",
+  "pie",
+  "pyramid",
+  "map"
 ]

@@ -13,14 +13,6 @@ const ColorPaletteFieldset = ({ props: { data, chartData, setChartData, target }
   const targetParse = target.split("-");
   const display = checkDependency({ data, chartData });
 
-  if (!display) {
-    return;
-  }
-
-  const nowValue = targetParse.length === 2 
-    ? chartData[targetParse[0]][targetParse[1]] 
-    : chartData[targetParse[0]][targetParse[1]][targetParse[2]];
-
   useEffect(() => {
     if (!selected) {
       return;
@@ -36,6 +28,14 @@ const ColorPaletteFieldset = ({ props: { data, chartData, setChartData, target }
 
     setChartData(newData);
   }, [selected]);
+
+  if (!display) {
+    return;
+  }
+
+  const nowValue = targetParse.length === 2
+    ? chartData[targetParse[0]][targetParse[1]]
+    : chartData[targetParse[0]][targetParse[1]][targetParse[2]];
 
   return (
     <fieldset className={styles.fieldset}>

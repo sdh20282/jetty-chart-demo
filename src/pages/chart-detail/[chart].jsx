@@ -18,15 +18,16 @@ const ChartDetailPage = ({ name, data, type, value }) => {
   const [chartData, setChartData] = useState({});
 
   useEffect(() => {
-    setRandomData(data);
     setChartData({
       ...JSON.parse(JSON.stringify(value)),
       base: {
         keys: [],
+        key: "",
         xLegend: "x-legend",
         yLegend: "y-legend",
-      }
+      },
     });
+    setRandomData(data);
   }, []);
 
   const Chart = getChartComponent({ chartName: name });
@@ -89,8 +90,8 @@ const ChartDetailPage = ({ name, data, type, value }) => {
         <header className="IROnly">
           <h2>Jetty Chart Detail Page</h2>
         </header>
-        {randomData.length !== 0 && chartData.normalSettings !== undefined && <SettingSection props={{ type, chartData, setChartData }} />}
-        {randomData.length !== 0 && chartData.normalSettings !== undefined && <DetailSection props={{ Chart, name, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
+        {randomData.length !== 0 && (chartData.normalSettings !== undefined || chartData.normalSetting !== undefined || chartData.generalSettings !== undefined) && <SettingSection props={{ type, chartData, setChartData }} />}
+        {randomData.length !== 0 && (chartData.normalSettings !== undefined || chartData.normalSetting !== undefined || chartData.generalSettings !== undefined) && <DetailSection props={{ Chart, name, data: randomData, chartData: checkData(chartData), updateData: updateRandomData }} />}
       </section>
     </main>
   )

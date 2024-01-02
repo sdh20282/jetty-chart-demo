@@ -1,4 +1,24 @@
 export const ScatterType = {
+  base: [
+    {
+      name: "data",
+      attribute: "object[],required",
+      description: "차트의 데이터를 의미합니다. { id: string, data[(x:int, y:int), ...] } 형태로 입력해야 합니다.",
+      type: "description",
+    },
+    {
+      name: "xLegend",
+      attribute: "string,optional",
+      description: "x축에 대한 설명입니다.",
+      type: "string",
+    },
+    {
+      name: "yLegend",
+      attribute: "string,optional",
+      description: "y축에 대한 설명입니다.",
+      type: "string",
+    },
+  ],
   // 기본 세팅
   normalSettings: [
     {
@@ -167,14 +187,6 @@ export const ScatterType = {
       dependency: ["axisYGridLineSettings-lineVisible", "axisYGridLineSettings-lineDash"],
       show: [true, true],
     },
-    {
-      name: "lineRound",
-      attribute: "boolean,optional",
-      description: "후방 배경에서 y축의 점선 라인을 둥글게 할 지 여부입니다.",
-      type: "boolean",
-      dependency: ["axisYGridLineSettings-lineVisible", "axisYGridLineSettings-lineDash"],
-      show: [true, true],
-    },
   ],
   axisXGridLineSettings: [
     {
@@ -235,22 +247,6 @@ export const ScatterType = {
       dependency: ["axisXGridLineSettings-lineVisible", "axisXGridLineSettings-lineDash"],
       show: [true, true],
     },
-    {
-      name: "lineRound",
-      attribute: "boolean,optional",
-      description: "후방 배경에서 x축의 점선 라인을 둥글게 할 지 여부입니다.",
-      type: "boolean",
-      dependency: ["axisXGridLineSettings-lineVisible", "axisXGridLineSettings-lineDash"],
-      show: [true, true],
-    },
-    {
-      name: "showEndLine",
-      attribute: "boolean,optional",
-      description: "후방 배경에서 x축의 양 끝 라인을 생성할 지 여부입니다.",
-      type: "boolean",
-      dependency: "axisXGridLineSettings-lineVisible",
-      show: true,
-    },
   ],
   pointSettings : [
 		{
@@ -261,29 +257,33 @@ export const ScatterType = {
 			unit : "px"
 		},
 		{
-		  name : "tooltipOn",
-			attribute : "boolean,optional",
-			description : "마우스 호버시 점의 좌표를 출력합니다.",
-		  type : "boolean"
-		},
-		{
-		  name : "pointRenderTime",
+      name : "pointRenderTime",
 			attribute : "number,optional",
 			description : "그룹별 데이터의 렌더링 간격을 설정합니다.",
 		  type : "number",
 			unit : "s"
 		},
+    {
+      name : "tooltipOn",
+      attribute : "boolean,optional",
+      description : "마우스 호버시 점의 좌표를 출력합니다.",
+      type : "boolean"
+    },
 		{
 		  name : "xName",
 			attribute : "boolean,optional",
 			description : "출력하는 x좌표의 이름을 설정합니다.",
-		  type : "string"
+		  type : "string",
+      dependency : 'pointSettings-tooltipOn',
+      show : true
 		},
 		{
 		  name : "yName",
 			attribute : "boolean,optional",
 			description : "출력하는 y좌표의 이름을 설정합니다.",
-		  type : "string"
+		  type : "string",
+      dependency : 'pointSettings-tooltipOn',
+      show : true
 		}
 	]
 };

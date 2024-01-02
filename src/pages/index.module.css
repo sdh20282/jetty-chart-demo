@@ -1,11 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
+.warpper {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main{
+  width: 100vw;
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 
 .section {
-  border-top: 1px solid #ddd;
-  padding-top: 0.2%;
-  margin-top: 3%;
-  display: flex;
-  justify-content: space-between;
   background-color: white;
+
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
@@ -36,12 +54,13 @@
 
 
 @keyframes twinkle {
-0% {
-  transform: scale(1);
-}
-100% {
-  transform: scale(1.2);
-}
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
 }
 
 .linkItemo {
@@ -51,11 +70,11 @@
   margin-top: 10%;
 }
 
-.linkItemo:hover {
+/* .linkItemo:hover {
   animation-name: twinkle;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
-}
+} */
 
 .linkItemt {
  width: 60%;
@@ -63,11 +82,11 @@
  margin: auto;
 }
 
-.linkItemt:hover {
+/* .linkItemt:hover {
   animation-name: twinkle;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  }
+} */
 
 
 .imgChart {
@@ -94,4 +113,15 @@
   width: 35%;
   margin-top: 2%;
   margin-bottom: 5%;
+}
+
+.footer {
+  height: 80px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.footer > p {
+  color: #777;
 }
